@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/TCP_IP_Test.unity
+    guid: 141c2d768134f464bb428855b02718c8
+  - enabled: 1
+    path: Assets/Scenes/Receive.unity
+    guid: 08dc38afcb6d4bf41b19192812359ddd
+  - enabled: 0
+    path: Assets/Scenes/DebugMode.unity
+    guid: 2fcf7c2651214d84c8e6ae89cffe3195
+  m_configObjects: {}

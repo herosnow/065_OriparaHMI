@@ -1,0 +1,8 @@
+DataName,StartPos,Length
+NE,0 ,16,
+TA2AT,16 ,16,
+GXACC,32 ,10,
+YR,42 ,10,
+STPLAMP,52 ,1,
+AUT03VAC1,53 ,3,
+AUT03SUM,56 ,8,
