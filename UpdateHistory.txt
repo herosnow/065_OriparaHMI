@@ -1,0 +1,4 @@
+2020/01/16 14:00
+    1. ENG< AutoDrive_Eng、ManualDrive_Eng >、JPN< AutoDrive、ManualDrive >の変更
+    2. Common< Read< Read_00000 - Read_00100 > >を変更
+    3. Common< 2DBG_0108-1 >を変更
