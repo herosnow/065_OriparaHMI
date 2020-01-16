@@ -59,5 +59,5 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Logファイルの除外
-.*LogData.txt$
+2020_[01-12]_[01-31]_[00-23]_[00-59]_[00-99]_LogData.txt
 
