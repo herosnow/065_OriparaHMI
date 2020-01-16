@@ -793,29 +793,55 @@ public class DataBase : MonoBehaviour
     }
 
 
+    float timerCount = 0.0f;
     void CheckSpeedForDsmControl()
     {
-        //リストに追加
-        speedForDsmControl.Add(scenarioCheck_Int[24] * multiCoefficient);
+        //リスト使うやーつ
+        #region
+        ////リストに追加
+        //speedForDsmControl.Add(scenarioCheck_Int[24] * multiCoefficient);
 
-        //指定数以上になったら古いのを削除
-        if(speedForDsmControl.Count > 60 * duration){
-            speedForDsmControl.RemoveAt(0);
+        ////指定数以上になったら古いのを削除
+        //if(speedForDsmControl.Count > 60 * duration){
+        //    speedForDsmControl.RemoveAt(0);
+        //}
+
+        ////リストの各要素を加算
+        //var speedForDsmControlSum = speedForDsmControl.Sum();
+        ////Debug.LogWarning("リストの要素数：" + speedForDsmControl.Count + " & リストの合計：" + speedForDsmControlSum + " & 合計" + speedForDsmControlSum + " & 基準" + stopCriteria * speedForDsmControl.Count);
+
+        ////時速xキロがx秒続いたか判断
+        //if (speedForDsmControlSum >= stopCriteria * speedForDsmControl.Count)
+        //{
+        //    //Debug.LogWarning("グリッド停止");
+        //    isGridStop = true;
+        //}
+        #endregion
+
+
+        //time.delta使うやーつ
+        #region
+        //秒数をカウント
+        timerCount += Time.deltaTime;
+        //Debug.LogWarning("timerCount : " + timerCount);
+
+        //現在速度を代入 受信値×補正値（0.01）
+        var nowDsmControlSpeed = scenarioCheck_Int[24] * multiCoefficient;
+
+        //停止基準速度（0.5）より上が来たらカウントをリセット
+        if (nowDsmControlSpeed > stopCriteria)
+        {
+            Debug.LogWarning("RESET");
+            timerCount = 0.0f;
         }
 
-        //リストの各要素を加算
-        var speedForDsmControlSum = speedForDsmControl.Sum();
-        //Debug.LogWarning("リストの要素数：" + speedForDsmControl.Count + " & リストの合計：" + speedForDsmControlSum + " & 合計" + speedForDsmControlSum + " & 基準" + stopCriteria * speedForDsmControl.Count);
-
-        //時速xキロがx秒続いたか判断
-        if (speedForDsmControlSum >= stopCriteria * speedForDsmControl.Count)
+        //タイムカウントが停止基準時間（0.1）を超えたら
+        if (timerCount >= duration)
         {
-            //Debug.LogWarning("グリッド停止");
+            Debug.LogWarning("STOP");
             isGridStop = true;
         }
-
-        //Debug.LogWarning("isGridStop : " + isGridStop);
-
+        #endregion
     }
 
     float FpsCount()
