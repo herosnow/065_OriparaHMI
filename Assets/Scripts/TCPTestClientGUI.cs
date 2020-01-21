@@ -482,6 +482,7 @@ public class TCPTestClientGUI : MonoBehaviour
     }
 
     //GUI関連の変数
+    [Header("ワイヤーフレームのアニメーション")]
     public Animator roadGrid;
 
     [Header("方向指示矢印")]
