@@ -880,22 +880,25 @@ public class TCPTestClientGUI : MonoBehaviour
             //READINESS Readniss規定値（0～100）
             if (_dataBase501[26][3] != "")
             {
+                if (language == 1)
+                {
+                    Debug.LogWarning("JPN");
+                    readnessText.sprite = readnissTextSprites_JPN;
+                }
+                else if (language == 2)
+                {
+                    Debug.LogWarning("ENG");
+                    readnessText.sprite = readnissTextSprites_ENG;
+                }
+                else
+                {
+                    Debug.LogWarning("OTHER");
+                    readnessText.sprite = readnissTextSprites_JPN;
+                }
                 if (readnesUpdateTime > 1f)
                 {
                     readniss.sprite = readnissSprites[1 + Int32.Parse(_dataBase501[26][3])];
-                    if (language == 1)
-                    {
-                        readnessText.sprite = readnissTextSprites_JPN;
-                    }
-                    else if (language == 2)
-                    {
-
-                        readnessText.sprite = readnissTextSprites_ENG;
-                    }
-                    else
-                    {
-                        readnessText.sprite = readnissTextSprites_JPN;
-                    }
+                   
                     readnesUpdateTime = 0f;
                 }
             }
@@ -1094,8 +1097,7 @@ public class TCPTestClientGUI : MonoBehaviour
                 codeNum_One.enabled = false;
                 codeNum_Ten.enabled = false;
                 attetionImage.enabled = false;
-            }
-            readnessText.sprite = readnissTextSprites_JPN;       
+            }  
         }
     }
 
@@ -1153,6 +1155,7 @@ public class TCPTestClientGUI : MonoBehaviour
 
     public void ReadnessUpdate()
     {
+        Debug.LogWarning("TTTT");
         if (_dataBase501[0][3] == "3" || _dataBase501[0][3] == "7")
         {
             //READINESS Readniss規定値（0～100）
@@ -1161,15 +1164,17 @@ public class TCPTestClientGUI : MonoBehaviour
                 readniss.sprite = readnissSprites[1 + Int32.Parse(_dataBase501[26][3])];
                 if (language == 1)
                 {
+                    Debug.LogWarning("JPNJPN");
                     readnessText.sprite = readnissTextSprites_JPN;
                 }
                 else if (language == 2)
                 {
-
+                    Debug.LogWarning("ENGENG");
                     readnessText.sprite = readnissTextSprites_ENG;
                 }
                 else
                 {
+                    Debug.LogWarning("OTHOTH");
                     readnessText.sprite = readnissTextSprites_JPN;
                 }
             }

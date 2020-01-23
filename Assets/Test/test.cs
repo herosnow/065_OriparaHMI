@@ -20,8 +20,12 @@ public class test : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
+            System.DateTime now = System.DateTime.Now;
+           
             count++;
-            ScreenCapture.CaptureScreenshot("text_"+count+".png");
+            //ScreenCapture.CaptureScreenshot("_text_" + count + ".png");
+            ScreenCapture.CaptureScreenshot(now.Year + "_" + now.Month + "_" + now.Day + "_" + now.Hour + "_" + now.Minute + "_text_" + count + ".png");
+            //Debug.Log(now.Year + "_" + now.Month + "_" + now.Day + "_" + now.Hour + "_" + now.Minute + "_text_" + count + ".png");
         }
     }
 }
