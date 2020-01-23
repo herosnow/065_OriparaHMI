@@ -6908,7 +6908,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 127.0.0.1
+  m_Text: 192.168.1.20
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -14175,7 +14175,7 @@ MonoBehaviour:
   convertTest: {fileID: 1739790794}
   dataBase: {fileID: 1739790792}
   sendMessage: 
-  debug: 1
+  debug: 0
   connect: 0
   testCan501: 31 C4 05 00 14 00 00 1C
   testCan502: 3C 30 00 00 00 00 00 7B
@@ -16136,7 +16136,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 399eaaea2e017924cb29a3a279549002, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 645526aecd0442b43b88b753b1168551, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
